@@ -1,21 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { fade } from "astro:transitions";
+import Slider from "../components/Slider.astro";
+import Hero from "../components/Hero.astro";
+import Header2 from "../components/Header2.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
-</Layout>
+<!doctype html>
+<html lang="en" data-theme="slaymonkey">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="daisy">
+    <Header2 />
+    <Hero />
+    <main class="w-auto lg:w-5xl m-auto">
+      <h1 class="font-serif text-2xl" data-aos="fade-in">🧑‍🚀 Hello, Astronaut!</h1>
+      <button class="btn" data-aos="fade-in">button daisy</button>
+      <p>
+        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template serves as a
+        lightweight, minimally-styled starting point for anyone looking to build a personal website, blog, or portfolio with
+        Astro.
+      </p>
+      <p>
+        This template comes with a few integrations already configured in your
+        <code>astro.config.mjs</code> file. You can customize your setup with
+        <a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind, React, or Vue to your
+        project.
+      </p>
+      <p>Here are a few ideas on how to get started with the template:</p>
+      <ul>
+        <li>Edit this page in <code>src/pages/index.astro</code></li>
+        <li>Edit the site header items in <code>src/components/Header.astro</code></li>
+        <li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
+        <li>Check out the included blog posts in <code>src/content/blog/</code></li>
+        <li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+      </ul>
+      <p>
+        Have fun! If you get stuck, remember to
+        <a href="https://docs.astro.build/">read the docs</a>
+        or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+      </p>
+      <Slider />
+      <p>
+        Looking for a blog template with a bit more personality? Check out
+        <a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
+        by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+      </p>
+    </main>
+    <Footer />
+  </body><script is:inline type="module" src="/src/scripts/main.ts"></script>
+</html>
