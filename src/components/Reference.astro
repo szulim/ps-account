@@ -1,0 +1,26 @@
+---
+interface Props {
+  slideId: number;
+  lastSlideId: number;
+  clientName: string;
+}
+const { slideId, lastSlideId, clientName } = Astro.props;
+const id = `slide-${slideId}`;
+const prevSlideId = slideId > 0 ? slideId - 1 : null;
+const nextSlideId = slideId < lastSlideId ? slideId + 1 : null;
+const prevHref = `#slide-${prevSlideId}`;
+const nextHref = `#slide-${nextSlideId}`;
+---
+
+<div id={id} class="carousel-item relative w-full">
+  <div class="absolute -left-2 -right-2 lg:left-5 lg:right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+    <a href={prevHref} class="btn btn-ghost"> ❮ </a>
+    <a href={nextHref} class="btn btn-ghost"> ❯ </a>
+  </div>
+  <div class="w-full px-7 lg:px-20 flex flex-col justify-center">
+    <h2 class="text-xl font-bold text-center mb-2">{clientName}</h2>
+    <div class="italic text-justify">
+      <slot />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="card card-lg bg-base-200 border-[1px] border-primary w-96 shadow-lg shadow-secondary" data-aos="fade-up">
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <slot />
+    <!-- <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div> -->
+  </div>
+</div>
