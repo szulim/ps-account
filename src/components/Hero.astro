@@ -3,8 +3,7 @@ import { Image } from 'astro:assets';
 import headerHome from '../assets/header-home.webp';
 ---
 
-<div class="hero min-h-screen" data-aos="fade-in">
-    <!-- <div class="hero min-h-screen" style="background-image: url(/src/assets/header-home.webp);" data-aos="fade-in"> -->
+<div class="hero min-h-screen" data-aos="fade-in" data-aos-delay="100">
     <Image src={headerHome} alt="Hero Image" class="lg:block object-cover object-center w-full h-full" />
     <div class="hero-overlay bg-transparent bg-gradient-to-r from-0% from-stone-600/90 to-transparent to-80%"></div>
     <div class="hero-content text-neutral-content text-left lg:w-5xl">
