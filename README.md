@@ -1,3 +1,12 @@
+# PS Account Website
+
+- static page for netlify
+- daisy for ui
+- umami for stats
+- forms?
+
+---
+
 # Astro on Netlify Platform Starter
 
 [Live Demo](https://astro-platform-starter.netlify.app/)
