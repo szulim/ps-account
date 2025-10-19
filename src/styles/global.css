@@ -36,7 +36,8 @@
     color-scheme: 'light';
     --color-base-100: oklch(98% 0.001 106.423);
     --color-base-200: oklch(97% 0.001 106.424);
-    --color-base-300: oklch(92% 0.003 48.717);
+    --color-base-300: oklch(95% 0.001 106.425);
+    --color-base-400: oklch(92% 0.003 48.717);
     --color-base-content: oklch(26% 0.007 34.298);
     --color-primary: #f1d8c6;
     --color-primary-content: oklch(37% 0 0);
@@ -65,8 +66,8 @@
 }
 
 /* Custom divider gap */
-@layer components {
+/* @layer components {
     .divider:not(:empty) {
-        gap: 3rem !important;
+        gap: 2rem !important;
     }
-}
+} */
