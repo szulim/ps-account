@@ -1,12 +1,13 @@
 ---
 export interface Props {
     tag?: 'h2' | 'h3';
+    id?: string;
 }
 
-const { tag = 'h2' } = Astro.props;
+const { tag = 'h2', id } = Astro.props;
 ---
 
-<div class="divider divider-primary mb-10 lg:mb-16 max-w-full">
+<div id={id} class="divider divider-primary mb-10 lg:mb-16 max-w-full">
     {
         tag === 'h2' && (
             <h2 class="font-serif text-3xl lg:text-6xl" data-aos="fade-up">
