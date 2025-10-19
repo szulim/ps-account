@@ -1,68 +1,72 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
-  themes:
-    light --default,
-    dark --prefersdark,
-    slaymonkey;
+    themes: light --default, dark --prefersdark, slaymonkey;
 }
 @font-face {
-  font-family: 'SourceSerif';
-  src: url('/public/fonts/source-serif.ttf');
-  font-weight: 400;
-  font-style: normal;
-  display: swap;
+    font-family: 'SourceSerif';
+    src: url('/public/fonts/source-serif.ttf');
+    font-weight: 400;
+    font-style: normal;
+    display: swap;
 }
 @font-face {
-  font-family: 'Atkinson';
-  src: url('/fonts/atkinson-regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Atkinson';
+    src: url('/fonts/atkinson-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-  font-family: 'Atkinson';
-  src: url('/fonts/atkinson-bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Atkinson';
+    src: url('/fonts/atkinson-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @theme {
-  --default-font-family: Atkinson, sans-serif;
-  --font-serif: SourceSerif, sans-serif;
+    --default-font-family: Atkinson, sans-serif;
+    --font-serif: SourceSerif, sans-serif;
 }
 
 @plugin "daisyui/theme" {
-  name: 'slaymonkey';
-  default: false;
-  prefersdark: false;
-  color-scheme: 'light';
-  --color-base-100: oklch(98% 0.001 106.423);
-  --color-base-200: oklch(97% 0.001 106.424);
-  --color-base-300: oklch(92% 0.003 48.717);
-  --color-base-content: oklch(26% 0.007 34.298);
-  --color-primary: #f1d8c6;
-  --color-primary-content: oklch(37% 0 0);
-  --color-secondary: #9aacba;
-  --color-secondary-content: oklch(27% 0.033 256.848);
-  --color-accent: oklch(78% 0.115 274.713);
-  --color-accent-content: oklch(25% 0.09 281.288);
-  --color-neutral: oklch(55% 0.046 257.417);
-  --color-neutral-content: oklch(98% 0.001 106.423);
-  --color-info: oklch(74% 0.16 232.661);
-  --color-info-content: oklch(29% 0.066 243.157);
-  --color-success: oklch(84% 0.238 128.85);
-  --color-success-content: oklch(27% 0.072 132.109);
-  --color-warning: oklch(75% 0.183 55.934);
-  --color-warning-content: oklch(26% 0.079 36.259);
-  --color-error: oklch(71% 0.202 349.761);
-  --color-error-content: oklch(28% 0.109 3.907);
-  --radius-selector: 0rem;
-  --radius-field: 0rem;
-  --radius-box: 0rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
+    name: 'slaymonkey';
+    default: false;
+    prefersdark: false;
+    color-scheme: 'light';
+    --color-base-100: oklch(98% 0.001 106.423);
+    --color-base-200: oklch(97% 0.001 106.424);
+    --color-base-300: oklch(92% 0.003 48.717);
+    --color-base-content: oklch(26% 0.007 34.298);
+    --color-primary: #f1d8c6;
+    --color-primary-content: oklch(37% 0 0);
+    --color-secondary: #9aacba;
+    --color-secondary-content: oklch(27% 0.033 256.848);
+    --color-accent: oklch(78% 0.115 274.713);
+    --color-accent-content: oklch(25% 0.09 281.288);
+    --color-neutral: oklch(55% 0.046 257.417);
+    --color-neutral-content: oklch(98% 0.001 106.423);
+    --color-info: oklch(74% 0.16 232.661);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(84% 0.238 128.85);
+    --color-success-content: oklch(27% 0.072 132.109);
+    --color-warning: oklch(75% 0.183 55.934);
+    --color-warning-content: oklch(26% 0.079 36.259);
+    --color-error: oklch(71% 0.202 349.761);
+    --color-error-content: oklch(28% 0.109 3.907);
+    --radius-selector: 0rem;
+    --radius-field: 0rem;
+    --radius-box: 0rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
+/* Custom divider gap */
+@layer components {
+    .divider:not(:empty) {
+        gap: 3rem !important;
+    }
 }
