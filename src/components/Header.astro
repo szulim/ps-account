@@ -1,51 +1,43 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
-import { Image } from "astro:assets";
-import logoGray from "../../public/ps-logo-gray.png";
-import logoGold from "../../public/ps-logo-gold.png";
-import MenuItems from "./MenuItems.astro";
-import PhoneIcon from "./svg/PhoneIcon.astro";
+import { Image } from 'astro:assets';
+import logoGray from '../../public/ps-logo-gray.png';
+import MenuItems from './MenuItems.astro';
+import PhoneIcon from './svg/PhoneIcon.astro';
 ---
 
 <header class="bg-white shadow-md sticky top-0 z-10 w-full">
-  <div class="drawer drawer-end">
-    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content flex flex-col">
-      <!-- Navbar -->
-      <div class="navbar w-full lg:w-5xl m-auto">
-        <div class="flex-1 m-1"><Image src={logoGray} alt={"logo"} class="w-16 lg:w-22" /></div>
-        <div class="hidden flex-none lg:block">
-          <ul class="menu menu-horizontal menu-lg">
-            <MenuItems />
-          </ul>
-        </div>
-        <div class="flex gap-8 items-center lg:hidden">
-          <!-- <button
+    <div class="drawer drawer-end">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+            <!-- Navbar -->
+            <div class="navbar w-full lg:w-5xl m-auto">
+                <div class="flex-1 m-1"><a href="/"><Image src={logoGray} alt={'logo'} class="w-16 lg:w-22" /></a></div>
+                <div class="hidden flex-none lg:block">
+                    <ul class="menu menu-horizontal menu-lg">
+                        <MenuItems />
+                    </ul>
+                </div>
+                <div class="flex gap-8 items-center lg:hidden">
+                    <!-- <button
             class="btn btn-sm btn-outline btn-primary text-secondary mr-4 *:fill-secondary hover:*:fill-secondary focus-visible:*:fill-secondary focus:*:fill-secondary active:*:fill-secondary"
           > -->
-          <button class="btn btn-sm btn-primary px-2">
-            <PhoneIcon />
-            Zadzwoń
-          </button>
-          <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline-block h-6 w-6 stroke-current">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-neutral"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </label>
+                    <button class="btn btn-sm btn-primary px-2">
+                        <PhoneIcon />
+                        Zadzwoń
+                    </button>
+                    <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline-block h-6 w-6 stroke-current">
+                            <path stroke-linecap="round" stroke-linejoin="round" class="text-neutral" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="drawer-side">
+            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu menu-lg bg-base-200 min-h-full w-80 p-4">
+                <MenuItems />
+            </ul>
+        </div>
     </div>
-    <div class="drawer-side">
-      <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-      <ul class="menu menu-lg bg-base-200 min-h-full w-80 p-4">
-        <MenuItems />
-      </ul>
-    </div>
-  </div>
 </header>

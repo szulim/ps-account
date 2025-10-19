@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Hero from '../components/Hero.astro';
+
+const { heroImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="slaymonkey" class="scroll-smooth scroll-p-[200px]">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="daisy">
+        <Header />
+        <Hero heroImage={heroImage} />
+        <main class="w-auto lg:w-5xl lg:mx-auto m-3 py-10 lg:py-16 space-y-20 mb-[100px]">
+            <slot />
+        </main>
+        <Footer />
+        <script src="../scripts/main"></script>
+    </body>
+</html>

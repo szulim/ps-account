@@ -1,0 +1,26 @@
+---
+export interface Props {
+    tag?: 'h2' | 'h3';
+    id?: string;
+    class?: string;
+}
+
+const { tag = 'h2', id, class: className } = Astro.props;
+---
+
+<div id={id} class={`divider divider-primary lg:!gap-12 mt-10 mb-10 lg:mb-16 max-w-full h-auto ${className}`} data-aos="fade-in">
+    {
+        tag === 'h2' && (
+            <h2 class="font-serif text-3xl lg:text-6xl" data-aos="fade-up">
+                <slot />
+            </h2>
+        )
+    }
+    {
+        tag === 'h3' && (
+            <h3 class="font-serif text-3xl lg:text-4xl" data-aos="fade-up">
+                <slot />
+            </h3>
+        )
+    }
+</div>

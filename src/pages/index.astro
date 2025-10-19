@@ -1,32 +1,16 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Hero from "../components/Hero.astro";
-import WhyPsAccount from "../components/WhyPsAccount.astro";
-import WhyCardsList from "../components/WhyCardsList.astro";
-import ProcessTimeline from "../components/ProcessTimeline.astro";
-import ReferencesCarousel from "../components/ReferencesCarousel.astro";
+import WhyPsAccount from '../components/WhyPsAccount.astro';
+import WhyCardsList from '../components/WhyCardsList.astro';
+import ReferencesCarousel from '../components/ReferencesCarousel.astro';
+import BasicLayout from '../layouts/BasicLayout.astro';
+import headerHome from '../assets/header-home.webp';
+import Heading from '../components/Heading.astro';
 ---
 
-<!doctype html>
-<html lang="en" data-theme="slaymonkey" class="scroll-smooth scroll-p-[200px]">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="daisy">
-    <Header />
-    <Hero />
-    <main class="w-auto lg:w-5xl lg:mx-auto m-3 py-10 lg:py-16 space-y-20 mb-[100px]">
-      <WhyPsAccount />
-      <WhyCardsList />
-      <div class="divider divider-primary my-10 lg:mt-24 max-w-full">
-        <h1 class="font-serif text-3xl lg:text-4xl" data-aos="fade-up">Opinie naszych klientów</h1>
-      </div>
-      <ReferencesCarousel />
-    </main>
-    <Footer />
-    <script src="../scripts/main"></script>
-  </body>
-</html>
+<BasicLayout heroImage={headerHome}>
+    <Heading tag="h2" id="o-nas">Dlaczego PS Account?</Heading>
+    <WhyPsAccount />
+    <WhyCardsList />
+    <Heading tag="h3" id="referencje">Opinie naszych klientów</Heading>
+    <ReferencesCarousel />
+</BasicLayout>
