@@ -1,10 +1,25 @@
 ---
 import { Image } from 'astro:assets';
 import headerHome from '../assets/header-home.webp';
----
 
+export interface Props {
+    imageUrl?: string;
+}
+
+const { imageUrl } = Astro.props;
+
+if (!imageUrl) {
+    return null;
+}
+const heroImage = headerHome;
+
+---
+{if (!heroImage) {
+    <></>;
+} else {
+    
 <div class="hero min-h-screen" data-aos="fade-in" data-aos-delay="100">
-    <Image src={headerHome} alt="Hero Image" class="lg:block object-cover object-center w-full h-full" />
+    <Image src={heroImage} alt="Hero Image" class="lg:block object-cover object-center w-full h-full" />
     <div class="hero-overlay bg-transparent bg-gradient-to-r from-0% from-stone-600/90 to-transparent to-80%"></div>
     <div class="hero-content text-neutral-content text-left lg:w-5xl">
         <div class="flex justify-items-start w-full">
@@ -19,3 +34,5 @@ import headerHome from '../assets/header-home.webp';
         </div>
     </div>
 </div>
+}}
+
