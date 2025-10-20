@@ -1,10 +1,10 @@
 ---
-
+import TRow from './TRow.astro';
 ---
 
 <div class="overflow-x-auto">
     <table class="table">
-        <caption class="lg:text-base font-semibold leading-loose">Księga przychodów i rozchodów – abonament stały </caption>
+        <caption class="lg:text-base font-semibold leading-10">Ryczałt od przychodów ewidencjonowanych – abonament stały</caption>
         <thead class="bg-base-300">
             <tr>
                 <th>Ilość dokumentów – wpisów</th>
@@ -12,14 +12,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="hover:bg-base-300">
-                <td>od 0 do 20 </td>
+            <TRow>
+                <td>od 0 do 30 </td>
                 <td>300,00 zł</td>
-            </tr>
-            <tr class="hover:bg-base-300">
+            </TRow>
+            <TRow>
                 <td>każde dodatkowe 10 wpisów</td>
                 <td>+ 60,00 zł</td>
-            </tr>
+            </TRow>
         </tbody>
     </table>
 </div>
