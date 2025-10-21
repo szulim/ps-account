@@ -5,4 +5,29 @@ import BasicLayout from '../layouts/BasicLayout.astro';
 
 <BasicLayout>
     <Heading tag="h2">Kontakt</Heading>
+    <section class="mt-8 flex flex-col gap-12">
+        <div class="card shadow-lg w-100 shadow-secondary m-auto" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body">
+                <h3 class="card-title text-lg">Dane firmy</h3>
+                <address class="not-italic leading-relaxed">
+                    <p><strong>PS Account sp. z o.o.</strong></p>
+                    <p>ul. Juliana Konstantego Ordona 5B/168<br />01-237 Warszawa</p>
+                    <p>NIP: 5273131726<br />KRS: 0001129171<br />Kapitał zakładowy: 5.000 zł</p>
+                </address>
+                <div class="mt-4 space-y-2">
+                    <p class="flex items-center gap-2">
+                        <span class="badge badge-outline">telefon</span>
+                        <a class="link link-hover" href="tel:+48501687423">501 687 423</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <span class="badge badge-outline">e-mail</span>
+                        <a class="link link-hover" href="mailto:p.s.suntax@gmail.com">p.s.suntax@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info w-100 m-auto font-semibold text-center" data-aos="fade-in" data-aos-delay="400">
+            <span class="text-center">Skontaktuj się z nami telefonicznie lub mailowo. Odpowiemy najszybciej jak to możliwe.</span>
+        </div>
+    </section>
 </BasicLayout>

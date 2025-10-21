@@ -1,8 +1,9 @@
 ---
 import Heading from '../components/Heading.astro';
 import InfoIcon from '../components/svg/InfoIcon.astro';
-import Table from '../components/Table.astro';
 import BasicLayout from '../layouts/BasicLayout.astro';
+import Table_przychRozch from '../components/tables/Table_przychRozch.astro';
+import Table_przychEwidencjonowane from '../components/tables/Table_przychEwidencjonowane.astro';
 ---
 
 <BasicLayout>
@@ -18,7 +19,7 @@ import BasicLayout from '../layouts/BasicLayout.astro';
         <!-- VAT Info -->
         <div class="w-full">
             <div class="m-auto w-fit">
-                <div class="badge badge-neutral badge-outline py-7 lg:p-4">
+                <div class="badge badge-neutral badge-outline py-8 lg:p-4">
                     <InfoIcon class="size-10 lg:size-5" />Wszystkie podane ceny są cenami netto. Należy doliczyć podatek VAT (aktualnie 23%).
                 </div>
             </div>
@@ -27,8 +28,19 @@ import BasicLayout from '../layouts/BasicLayout.astro';
 
     <!-- Pricing Table -->
     <section>
-        <Heading tag="h3" class="mt-16 mb-10">Cennik usług księgowych</Heading>
+        <div class="tabs tabs-box bg-primary">
+            <input type="radio" name="pricing" class="tab text-base font-semibold" checked="checked" aria-label="Usługi księgowe" />
+            <div class="tab-content bg-base-100 border-base-300 p-6">
+                <Table_przychRozch />
+                <div class="my-4"></div>
+                <Table_przychEwidencjonowane />
+            </div>
 
-        <Table />
+            <input type="radio" name="pricing" class="tab text-base font-semibold" aria-label="Usługi kadrowo-płacowe" />
+            <div class="tab-content bg-base-100 border-base-300 p-6"></div>
+
+            <input type="radio" name="pricing" class="tab text-base font-semibold" aria-label="Usługi dodatkowe" />
+            <div class="tab-content bg-base-100 border-base-300 p-6">Usługi dodatkowe</div>
+        </div>
     </section>
 </BasicLayout>

@@ -1,0 +1,44 @@
+---
+import TRow from './TRow.astro';
+---
+
+<div class="overflow-x-auto">
+    <table class="table">
+        <caption class="lg:text-base font-semibold leading-10">Księga przychodów i rozchodów – abonament stały </caption>
+        <thead class="bg-base-300">
+            <tr>
+                <th>Ilość dokumentów – wpisów</th>
+                <th>Opłata miesięczna</th>
+            </tr>
+        </thead>
+        <tbody>
+            <TRow>
+                <td>od 0 do 20 </td>
+                <td>300,00 zł</td>
+            </TRow>
+            <TRow>
+                <td>każde dodatkowe 10 wpisów*</td>
+                <td>+ 60,00 zł</td>
+            </TRow>
+            <TRow>
+                <td colspan="2">*opłata obejmująca zapisy powyżej 250 zapisów księgowych wymaga renegocjacji umowy</td>
+            </TRow>
+            <TRow>
+                <td>JPK_VAT-7, VAT-UE (korekta)</td>
+                <td>80,00 zł</td>
+            </TRow>
+            <TRow>
+                <td>ZUS DRA (miesięczny bez pracowników)</td>
+                <td>80,00 zł</td>
+            </TRow>
+            <TRow>
+                <td>Wystawianie faktur sprzedaży (do 3 faktur)</td>
+                <td>50,00 zł</td>
+            </TRow>
+            <TRow>
+                <td>Zeznanie roczne PIT (cena zależna od złożoności)</td>
+                <td>70 - 200 zł</td>
+            </TRow>
+        </tbody>
+    </table>
+</div>

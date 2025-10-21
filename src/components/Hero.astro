@@ -10,7 +10,7 @@ const { heroImage } = Astro.props;
         <div class="hero min-h-screen" data-aos="fade-in" data-aos-delay="100">
             <Image src={headerHome} alt="Hero Image" class="lg:block object-cover object-center w-full h-full" />
             <div class="hero-overlay bg-transparent bg-gradient-to-r from-0% from-stone-600/90 to-transparent to-80%" />
-            <div class="hero-content text-neutral-content text-left lg:w-5xl">
+            <div class="hero-content text-neutral-content text-left lg:w-5xl 2xl:pb-75 ">
                 <div class="flex justify-items-start w-full">
                     <div class="max-w-md space-y-6" data-aos="fade-right" data-aos-delay="300">
                         <h1 class="text-5xl font-bold font-serif">Twoje biuro rachunkowe i księgowość w Warszawie</h1>
@@ -18,7 +18,9 @@ const { heroImage } = Astro.props;
                             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae
                             et a id nisi.
                         </p>
-                        <button class="btn btn-primary btn-outline btn-xl">Dowiedz się więcej</button>
+                        <a href="/#o-nas" class="btn btn-primary btn-outline btn-xl">
+                            Dowiedz się więcej
+                        </a>
                     </div>
                 </div>
             </div>
